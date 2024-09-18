@@ -1,0 +1,206 @@
+:root {
+    --text-color: white;
+    --bg-url: url(./bg-desktop.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02); /* Corrigido */
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./moon-stars.svg);
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./bg-desktop-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02); /* Corrigido */
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./sun.svg);
+}
+
+
+body {
+
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+body * {
+
+    font-family: 'inter', sans-serif;
+    color: var(--text-color);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+#container {
+    width: 360px;
+    /*border: 1px solid red; - para ver o container criado no inicio é uma boa opção)*/
+    margin-right: auto;
+    margin-left: auto;
+
+
+    margin: 56px auto;
+
+
+}
+
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    display: block;
+    width: 112px;
+    margin: auto;
+
+}
+
+#profile p {
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4PX auto;
+
+}
+
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+
+    border: 0;
+    border-radius: 50px;
+    border-radius: 50%;
+    background-image: var(--switch-bg-url);
+    background-repeat: no-repeat;
+
+    position: absolute;
+    z-index: 1;
+    transform: translateY(-50%);
+    /*para que o botão fique centralizado*/
+    top: 50%;
+    left: 0;
+}
+
+
+
+.light #switch button {
+    right: 0;
+    left: initial;
+    /*para que o botão fique centralizado na posição inicial%;*/
+}
+
+#switch span {
+    display: block;
+    border-radius: 999px;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+
+}
+
+
+ul {
+    list-style: none;
+    /* para tirar os pontinhos da lista*/
+    display: flex;
+    flex-direction: column;
+    /* para colocar os itens na ordem que foram inseridos na lista*/
+    gap: 16px;
+    /* espacamento entre os itens da lista*/
+
+    padding: 24px 0;
+}
+
+
+ul li a {
+    /* border: 1px solid red;- para ver as caixas (container) que estamos criando*/
+    display: flex;
+    justify-content: center;
+    /*alinhar o texto no centro */
+    align-items: center;
+    /* alinha o texto no centro da linha imaginaria do quadrado */
+    display: flex;
+
+    /* heigth:52px;  valida o espaçamento entre os itens da lista - a linha imaginaria de cima que foi comentado sobre o quadrado */
+    padding: 16px 24px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    /*rgba e o formato da cor e o valor da opacidade*/
+    border: 1px solid var(--stroke-color);
+    /*border e o formato da borda e o valor da opacidade*/
+    border-radius: 8px;
+    /*borda arredondada*/
+
+
+
+    backdrop-filter: blur(5px);
+    /*efeito de blur*/
+
+    -webkit-backdrop-filter: blur(5px);
+    /*efeito de blur*/
+
+    text-decoration: none;
+    /* para tirar o sublinhado do link*/
+    font-weight: 500;
+
+
+    transition: background .5s;
+    /*vai transcionar para todos os itens da lista na pagina quando carrega-la novamente*/
+}
+
+/* :hover = pseudo-selector* - nele se aplica as coisa de quando o mouse passar por cima*/
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: var(--text-color)
+}
+
+#social-links {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+
+    font-size: 24px;
+}
+
+
+#social-links a {
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#social-links a:hover {
+    background: var(--highlight-color);
+    border-radius: 50%;
+
+}
+
+footer {
+    text-align: center;
+    padding: 24px 0;
+    font-size: 14px;
+    font-family: 'inter', sans-serif;
+}
